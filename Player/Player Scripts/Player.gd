@@ -12,7 +12,7 @@ func _process(delta):
 	
 	var direction : Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
-	direction.y = Input.get_action_strength("Up") - Input.get_action_strength("Down")
+	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	
 	velocity = direction * move_speed
 	pass
