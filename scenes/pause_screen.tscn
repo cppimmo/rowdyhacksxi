@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://25lx5eg5h3wb"]
 
 [node name="Pause Screen" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

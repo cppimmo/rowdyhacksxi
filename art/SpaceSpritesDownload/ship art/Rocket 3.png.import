@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpcfi0e6ae5hm"
-path="res://.godot/imported/Enemy ship 2.png-c1aec31bd80511d0b64a3ebb170ab390.ctex"
+uid="uid://barqpxowm3egb"
+path="res://.godot/imported/Rocket 3.png-f49d564693978ffdf472e1372fcc545a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/SpaceSpritesDownload/Enemy ship 2.png"
-dest_files=["res://.godot/imported/Enemy ship 2.png-c1aec31bd80511d0b64a3ebb170ab390.ctex"]
+source_file="res://art/SpaceSpritesDownload/ship art/Rocket 3.png"
+dest_files=["res://.godot/imported/Rocket 3.png-f49d564693978ffdf472e1372fcc545a.ctex"]
 
 [params]
 

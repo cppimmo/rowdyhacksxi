@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlroeldvbbxiv"
-path="res://.godot/imported/P3.png-d2a5cacd29d27069b8d3095e295bde1a.ctex"
+uid="uid://dj73xmyquvxrn"
+path="res://.godot/imported/P1.png-1dbe453b0fa188bb2ed5244deb9c9dc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/SpaceSpritesDownload/P3.png"
-dest_files=["res://.godot/imported/P3.png-d2a5cacd29d27069b8d3095e295bde1a.ctex"]
+source_file="res://art/SpaceSpritesDownload/planet art/P1.png"
+dest_files=["res://.godot/imported/P1.png-1dbe453b0fa188bb2ed5244deb9c9dc6.ctex"]
 
 [params]
 
