@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cgh2mjuggvfnv"]
+
+[ext_resource type="Texture2D" uid="uid://bbr5vkwvvmy1y" path="res://assets/textures/wood_panel.png" id="1_l6wr4"]
+[ext_resource type="FontFile" uid="uid://bk80tblv1r5rg" path="res://assets/fonts/Smokum/Smokum-Regular.ttf" id="1_w4dnx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y10ik"]
+texture = ExtResource("1_l6wr4")
+
+[resource]
+default_font = ExtResource("1_w4dnx")
+default_font_size = 24
+Button/colors/font_color = Color(0.9098039, 0.7529412, 0.5529412, 1)
+Button/colors/font_outline_color = Color(0.46666667, 0.31764707, 0.12156863, 1)
+Button/constants/outline_size = 8
+Button/styles/normal = SubResource("StyleBoxTexture_y10ik")
+Label/colors/font_color = Color(0.9098039, 0.7529412, 0.5529412, 1)
+Label/colors/font_outline_color = Color(0.46666667, 0.31764707, 0.12156863, 1)
+Label/constants/outline_size = 8
