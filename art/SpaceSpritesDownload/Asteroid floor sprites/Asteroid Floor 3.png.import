@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwsrg5ilnkvro"
-path="res://.godot/imported/Asteroid Floor.png-ac96b82a60b31f38391c5de0a100991f.ctex"
+uid="uid://c8jh6dro7r1sg"
+path="res://.godot/imported/Asteroid Floor 3.png-db98a45d7a34e73e01412c17411968ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/SpaceSpritesDownload/Asteroid Floor.png"
-dest_files=["res://.godot/imported/Asteroid Floor.png-ac96b82a60b31f38391c5de0a100991f.ctex"]
+source_file="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor 3.png"
+dest_files=["res://.godot/imported/Asteroid Floor 3.png-db98a45d7a34e73e01412c17411968ac.ctex"]
 
 [params]
 
