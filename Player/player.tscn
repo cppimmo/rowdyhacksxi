@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vi25pmypgnau"]
 
 [ext_resource type="Script" uid="uid://csmnh25xpg3ap" path="res://Player/Player Scripts/Player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://chh4y2rfhcl8k" path="res://Player/Sprites/ExamplePlayerSprite.png" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://12xaneugnuan" path="res://Player/Sprites/Cowboy_pixlart.png" id="2_4ntmi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 
@@ -13,6 +13,6 @@ position = Vector2(207, 138)
 shape = SubResource("CircleShape2D_edjgo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(207, 119)
-texture = ExtResource("1_l8h54")
-hframes = 21
+position = Vector2(208, 129)
+scale = Vector2(2, 2)
+texture = ExtResource("2_4ntmi")
