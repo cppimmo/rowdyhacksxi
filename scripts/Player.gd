@@ -18,6 +18,7 @@ signal died
 func _ready() -> void:
 	current_health = max_health
 	emit_signal("health_changed", current_health, max_health)
+	
 	#Player.health_changed.connect(hud.set_health)
 	#hud.set_health(zPlayer.current_health, zPlayer.max_health)
 	#pass # Replace with function body.
@@ -52,7 +53,7 @@ func heal(amount: int):
 	current_health = clamp(current_health, 0, max_health) #Clamp health between 0 and max_health
 	emit_signal("health changed", current_health, max_health)
 
-#NOT WHEN PLAYER DIES
+#NOT WHEN PLAYER DIES DO NOT USE!!!!!!!!!!!!!!!
 func die():
 	print("Player has died!")
 	emit_signal("died")
