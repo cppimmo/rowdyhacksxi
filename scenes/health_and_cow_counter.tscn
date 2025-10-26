@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://cvqdbbk34qd3c"]
+[gd_scene load_steps=2 format=3 uid="uid://cvqdbbk34qd3c"]
+
+[ext_resource type="Script" uid="uid://cxe6kaxa0fsq2" path="res://scripts/health_and_cow_counter.gd" id="1_syumu"]
 
 [node name="Health and Cow Counter" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+script = ExtResource("1_syumu")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -26,7 +29,7 @@ text = "Health: "
 [node name="health num text" type="Label" parent="CanvasLayer/VBoxContainer/Health Counter"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "3 health"
+text = " health"
 
 [node name="Cows Counter" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -39,4 +42,3 @@ text = "Cows Collected: "
 [node name="cow collector num text" type="Label" parent="CanvasLayer/VBoxContainer/Cows Counter"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "3"

@@ -1,17 +1,21 @@
-[gd_scene load_steps=22 format=4 uid="uid://b7mm0xyatuok3"]
+[gd_scene load_steps=23 format=4 uid="uid://co0juwwcd5ctd"]
 
 [ext_resource type="PackedScene" uid="uid://bl110pdmwqi7c" path="res://entities/enemy_spaceship_a.tscn" id="1_emj6c"]
-[ext_resource type="PackedScene" uid="uid://vi25pmypgnau" path="res://scenes/player.tscn" id="1_rupst"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://dv6s85yo2acad" path="res://scenes/player.tscn" id="1_rupst"]
+=======
+[ext_resource type="PackedScene" uid="uid://cy3g26rq7fjd4" path="res://Player/player.tscn" id="1_rupst"]
+>>>>>>> 15854efa6eee34ab8eaaf74588b5f4cb26eeb6ea
 [ext_resource type="Texture2D" uid="uid://b8c41dw3iovv" path="res://art/SpaceSpritesDownload/Laser Fences.png" id="2_emj6c"]
 [ext_resource type="Texture2D" uid="uid://edia7omix113" path="res://art/SpaceSpritesDownload/Space sprites.png" id="2_o6wi6"]
 [ext_resource type="Texture2D" uid="uid://bvphdqkul33ww" path="res://art/SpaceSpritesDownload/Space.png" id="3_emj6c"]
 [ext_resource type="Texture2D" uid="uid://dwsrg5ilnkvro" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor.png" id="4_mrac1"]
 [ext_resource type="Texture2D" uid="uid://c8jh6dro7r1sg" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor 3.png" id="5_2q4k0"]
 [ext_resource type="Texture2D" uid="uid://d0nc73fe32wqx" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Bottom.png" id="6_x1amm"]
-[ext_resource type="PackedScene" uid="uid://bae3aynq4uwgp" path="res://scenes/cow.tscn" id="8_2q4k0"]
+[ext_resource type="PackedScene" uid="uid://bae3aynq4uwgp" path="res://scripts/cow.tscn" id="8_2q4k0"]
 [ext_resource type="PackedScene" uid="uid://da8m3glfuv0u5" path="res://scenes/boundary.tscn" id="8_mrac1"]
-[ext_resource type="PackedScene" uid="uid://cvqdbbk34qd3c" path="res://scenes/health_and_cow_counter.tscn" id="11_2bfhc"]
-
+[ext_resource type="PackedScene" path="res://scenes/health_and_cow_counter.tscn" id="11_2bfhc"]
+[ext_resource type="PackedScene" uid="uid://dnkq4an6dj4mr" path="res://entities/mob.tscn" id="12_osidk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fn4oh"]
 texture = ExtResource("4_mrac1")
@@ -9056,6 +9060,10 @@ position = Vector2(717, 222)
 rotation = -0.5349424
 
 [node name="Health and Cow Counter" parent="." instance=ExtResource("11_2bfhc")]
-position = Vector2(255, 198)
+offset_left = 255.0
+offset_top = 198.0
+offset_right = 255.0
+offset_bottom = 198.0
 
-
+[node name="Mob" parent="." instance=ExtResource("12_osidk")]
+position = Vector2(271, 198)
