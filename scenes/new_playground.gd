@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @onready var player_ref: Player = $Player
 @onready var hud: CanvasLayer = $"Health and Cow Counter/CanvasLayer"
 
@@ -13,3 +14,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+#const Asteroid = preload("res://scenes/asteroid.tscn")
+
+# Called when the node enters the scene tree for the first time.
+#func _ready():
+	#var asteroidInstance = Asteroid.instantiate()
+	#add_child(asteroidInstance)
+	#asteroidInstance.startDespawnTimer()
+	
+

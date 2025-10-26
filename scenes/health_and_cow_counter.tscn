@@ -27,13 +27,13 @@ layout_mode = 2
 [node name="health counter text" type="Label" parent="CanvasLayer/VBoxContainer/Health Counter"]
 layout_mode = 2
 theme = ExtResource("2_jdxok")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Health: "
 
 [node name="health num text" type="Label" parent="CanvasLayer/VBoxContainer/Health Counter"]
 layout_mode = 2
 theme = ExtResource("2_jdxok")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = " health"
 
 [node name="Cows Counter" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
@@ -42,10 +42,10 @@ layout_mode = 2
 [node name="cow counter text" type="Label" parent="CanvasLayer/VBoxContainer/Cows Counter"]
 layout_mode = 2
 theme = ExtResource("2_jdxok")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Cows Collected: "
 
 [node name="cow collector num text" type="Label" parent="CanvasLayer/VBoxContainer/Cows Counter"]
 layout_mode = 2
 theme = ExtResource("2_jdxok")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
