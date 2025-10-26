@@ -2,7 +2,7 @@ class_name Player extends CharacterBody2D
 
 @onready var hit_sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-#@onready var zPlayer = $ZoeyPlayer
+#@onready var Player = $ZoeyPlayer
 #@onready var hud: CanvasLayer = $"VBoxContainer/Health Counter/health num text"
 
 var move_speed : float = 150.0
@@ -55,8 +55,8 @@ func die():
 	died.emit()
 	#add game over logic here
 	
-#func _on_Player_body_entered(_body):
-	#hit_sfx.play()
+func _on_Player_body_entered(_body):
+	hit_sfx.play()
 	
 
 
