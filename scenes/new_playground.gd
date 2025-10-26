@@ -23,4 +23,3 @@ func _process(delta: float) -> void:
 	#add_child(asteroidInstance)
 	#asteroidInstance.startDespawnTimer()
 	
-

@@ -1,13 +1,56 @@
-[gd_scene load_steps=7 format=3 uid="uid://tt2qjls8jv8b"]
+[gd_scene load_steps=14 format=3 uid="uid://xw0vwphx3d5u"]
 
 [ext_resource type="Script" uid="uid://csmnh25xpg3ap" path="res://scripts/Player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://12xaneugnuan" path="res://art/Sprites/Cowboy_pixlart.png" id="2_4ntmi"]
 [ext_resource type="AudioStream" uid="uid://dpjsyessps473" path="res://hit_sfx.mp3" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://ymji0op3ts3v" path="res://assets/textures/lasso_hoop.png" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bg462fc7casv8" path="res://art/Sprites/Cowboy_idle3.png" id="5_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://db3tua3ae6m2l" path="res://art/Sprites/Cowboy_Idle2.png" id="6_fjrip"]
+[ext_resource type="Texture2D" uid="uid://djlwil6garx77" path="res://art/Sprites/Cowboy_Jump_Right2.png" id="7_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://r6daybl2uldk" path="res://art/Sprites/Cowboy_Jump_Right1.png" id="8_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://ds2hdxa1d7mau" path="res://art/Sprites/Cowboy_Walking3.png" id="8_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://dtaemu3flqi37" path="res://art/Sprites/Cowboy_Walking4.png" id="9_d2wvv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qlg0r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smehm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fjrip")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d2wvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y4r1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d2wvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y4r1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y4r1p")
+}],
+"loop": true,
+"name": &"run",
+"speed": 3.0
+}]
 
 [node name="ZoeyPlayer" type="CharacterBody2D"]
 script = ExtResource("1_4ntmi")
@@ -43,3 +86,9 @@ shape = SubResource("CircleShape2D_qlg0r")
 texture = ExtResource("4_dqkch")
 
 [node name="Line2D" type="Line2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(41, 10)
+sprite_frames = SubResource("SpriteFrames_smehm")
+animation = &"run"
+frame_progress = 0.045238614
