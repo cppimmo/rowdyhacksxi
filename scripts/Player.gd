@@ -17,7 +17,7 @@ signal died
 func _ready() -> void:
 	current_health = max_health
 	emit_signal("health_changed", current_health, max_health)
-	#zPlayer.health_changed.connect(hud.set_health)
+	#Player.health_changed.connect(hud.set_health)
 	#hud.set_health(zPlayer.current_health, zPlayer.max_health)
 	#pass # Replace with function body.
 
@@ -39,6 +39,7 @@ func take_damage(amount: int) -> void:
 	
 	#self explanatory
 	if current_health <= 0:
+		print("Cowboy DOWN! (player died)")
 		died.emit()
 		
 func heal(amount: int):
@@ -51,7 +52,7 @@ func heal(amount: int):
 
 func die():
 	print("Player has died!")
-	#emit_signal("died")
+	emit_signal("died")
 	died.emit()
 	#add game over logic here
 	
