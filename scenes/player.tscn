@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://vi25pmypgnau"]
+
+[ext_resource type="Script" uid="uid://csmnh25xpg3ap" path="res://Player/Player Scripts/Player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://12xaneugnuan" path="res://Player/Sprites/Cowboy_pixlart.png" id="2_4ntmi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4ntmi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(203, 143)
+scale = Vector2(1.4399991, 0.5199994)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(207, 138)
+shape = SubResource("CircleShape2D_edjgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(208, 129)
+scale = Vector2(2, 2)
+texture = ExtResource("2_4ntmi")
