@@ -38,7 +38,7 @@ func take_damage(amount: int) -> void:
 	current_health = clamp(current_health - amount, 0, max_health) #Clamp health between 0 and max_health
 	emit_signal("health_changed" , current_health, max_health)
 	
-	#self explanatory
+	#WHEN PLAYER DIES
 	if current_health <= 0:
 		print("Cowboy DOWN! (player died)")
 		game_over.play()
@@ -52,6 +52,7 @@ func heal(amount: int):
 	current_health = clamp(current_health, 0, max_health) #Clamp health between 0 and max_health
 	emit_signal("health changed", current_health, max_health)
 
+#NOT WHEN PLAYER DIES
 func die():
 	print("Player has died!")
 	emit_signal("died")
