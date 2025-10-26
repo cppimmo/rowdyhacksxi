@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgqy7ntmb0sp1"]
+[gd_scene load_steps=3 format=3 uid="uid://crcpbrxa6rvcf"]
 
-[ext_resource type="PackedScene" uid="uid://vi25pmypgnau" path="res://Player/player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://cy3g26rq7fjd4" path="res://Player/player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://dnkq4an6dj4mr" path="res://mob.tscn" id="2_wt17y"]
 
 [node name="Playground" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(81, 50)
+
+[node name="Mob" parent="." instance=ExtResource("2_wt17y")]
+position = Vector2(99, 49)
+
+[editable path="Player"]
