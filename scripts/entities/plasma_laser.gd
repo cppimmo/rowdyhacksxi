@@ -18,6 +18,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	var p: = body
 	if body.is_in_group("player"):
-aaa		p.take_damage(25)
+		p.take_damage(25)
 		print("Ha! I hit the player.")
 		queue_free() # Remove this obj

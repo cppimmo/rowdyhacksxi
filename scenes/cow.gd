@@ -1,4 +1,5 @@
 extends Area2D
+const HEALTH_AND_COW_COUNTER = preload("res://scenes/health_and_cow_counter.tscn")
 
 var cowCount: int = 0
 signal cow_picked_up(count: int)
@@ -18,6 +19,6 @@ func _on_body_entered(body: Node) -> void:
 
 	if p.is_in_group("player"):
 		print("signal emitted: cow_picked_up")
-		cowCount += 1
+		HEALTH_AND_COW_COUNTER.increaseCows()
 		emit_signal("cow_picked_up", cowCount)
 		queue_free()
