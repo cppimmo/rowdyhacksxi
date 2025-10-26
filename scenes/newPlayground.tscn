@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c5noe3rc8n35v"]
+[gd_scene load_steps=25 format=4 uid="uid://c5noe3rc8n35v"]
 
 [ext_resource type="Texture2D" uid="uid://dwsrg5ilnkvro" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor.png" id="1_boxps"]
 [ext_resource type="Script" uid="uid://bfuoy1q4gvxyv" path="res://scenes/new_playground.gd" id="1_ia2p3"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://tt2qjls8jv8b" path="res://scenes/player.tscn" id="5_iwxyp"]
 [ext_resource type="Texture2D" uid="uid://edia7omix113" path="res://art/SpaceSpritesDownload/Space sprites.png" id="6_80c0g"]
 [ext_resource type="Texture2D" uid="uid://bvphdqkul33ww" path="res://art/SpaceSpritesDownload/Space.png" id="7_dhen7"]
-[ext_resource type="PackedScene" path="res://scripts/cow.tscn" id="8_3gkvd"]
+[ext_resource type="PackedScene" uid="uid://c6tdffymd5qb7" path="res://scripts/cow.tscn" id="8_3gkvd"]
+[ext_resource type="AudioStream" uid="uid://xboe6kendxrr" path="res://game_over.mp3" id="9_ia2p3"]
 [ext_resource type="PackedScene" uid="uid://da8m3glfuv0u5" path="res://scenes/boundary.tscn" id="9_x8as8"]
 [ext_resource type="PackedScene" uid="uid://bl110pdmwqi7c" path="res://entities/enemy_spaceship_a.tscn" id="10_jghjn"]
 [ext_resource type="PackedScene" uid="uid://81u44iwx4mbp" path="res://scenes/health_and_cow_counter.tscn" id="11_3xept"]
@@ -9026,6 +9027,10 @@ tile_set = SubResource("TileSet_d3jfy")
 [node name="Player" parent="." groups=["Player", "player"] instance=ExtResource("5_iwxyp")]
 position = Vector2(303, 150)
 
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("9_ia2p3")
+volume_db = 24.0
+
 [node name="cow" parent="." instance=ExtResource("8_3gkvd")]
 position = Vector2(863, 254)
 
@@ -9068,3 +9073,5 @@ rotation = -0.5349424
 
 [node name="Mob" parent="." instance=ExtResource("12_4nb5s")]
 position = Vector2(271, 198)
+
+[editable path="Player"]

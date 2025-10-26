@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody2D
 
 @onready var hit_sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var game_over: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 
 #@onready var Player = $ZoeyPlayer
 #@onready var hud: CanvasLayer = $"VBoxContainer/Health Counter/health num text"
@@ -40,6 +41,7 @@ func take_damage(amount: int) -> void:
 	#self explanatory
 	if current_health <= 0:
 		print("Cowboy DOWN! (player died)")
+		game_over.play()
 		died.emit()
 		
 func heal(amount: int):
