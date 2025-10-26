@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhytqel5eu3p0"]
+
+[ext_resource type="Script" path="res://rigid_body_2d.gd" id="1_i2edn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ihboo"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohl0x"]
+radius = 29.546574
+
+[node name="Astroid" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ihboo")
+gravity_scale = 0.0
+lock_rotation = true
+continuous_cd = 1
+script = ExtResource("1_i2edn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(310, 291)
+shape = SubResource("CircleShape2D_ohl0x")
