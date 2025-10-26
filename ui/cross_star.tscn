@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vsyw2jpvnmt3"]
+
+[ext_resource type="Texture2D" uid="uid://bafqxscagusxj" path="res://assets/textures/cross_star.png" id="1_21n0p"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_21n0p")

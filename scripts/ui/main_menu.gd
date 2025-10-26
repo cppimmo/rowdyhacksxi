@@ -14,7 +14,7 @@ var utils = preload("res://scripts/utils.gd")
 # Scences for the different types of stars/planets (they are TextureRect's)
 var star_data = {
 	"circle": "res://ui/circle_star.tscn",
-	# "cross": ""
+	"cross": "res://ui/cross_star.tscn"
 }
 
 func _load_from_file(file_path: String) -> String:
@@ -34,28 +34,53 @@ func _load_from_file(file_path: String) -> String:
 
 # Use to draw stars randomly above the background pane
 func _draw_background(num_stars: int) -> void:
+	var placed_positions: Array[Vector2] = []
+	var min_distance: float = 50.0 # Min distance between stars (should adjust)
+	
 	for i in range(num_stars):
 		var key = star_data.keys().pick_random()
 		var star_scene = load(star_data[key])
 		var star_instance = star_scene.instantiate()
-		background.add_child(star_instance)
+		
+		var rand_scale = randf_range(0.10, 0.34)
+		star_instance.scale = Vector2(rand_scale, rand_scale)
+		star_instance.modulate.a = randf_range(0.6, 1.0) # Random brightness
+		star_instance.rotation = randf_range(0, TAU)
 		
 		var bg_size = background.size
-		var star_size = star_instance.size
+		var star_size = star_instance.size * star_instance.scale
 		
-		var pos_x = utils.randi_num_between(star_size.x / 2, bg_size.x - star_size.x / 2)
-		var pos_y = utils.randi_num_between(star_size.y / 2, bg_size.y - star_size.y / 2)
-		var pos = Vector2i(pos_x, pos_y)
-		print("Background: ", bg_size, " Star: ", star_size, " -> Position: ", pos)
+		var pos: Vector2
+		var tries = 0
 		
-		print("Random position:", pos)
+		while true:
+			pos = Vector2(
+				utils.randi_num_between(star_size.x / 2, bg_size.x - star_size.x / 2),
+				utils.randi_num_between(star_size.y / 2, bg_size.y - star_size.y / 2)
+			)
+			var too_close = false
+			for existing_pos in placed_positions:
+				if existing_pos.distance_to(pos) < min_distance:
+					too_close = true
+					break
+			if not too_close or tries > 20:
+				break
+			tries += 1
+		
+		# Place the star and record it's position
+		background.add_child(star_instance)
+		star_instance.position = pos
+		placed_positions.append(pos)
+		#print("Background: ", bg_size, " Star: ", star_size, " -> Position: ", pos)
+		
+		#print("Random position:", pos)
 		
 		star_instance.position = pos
 		#star_instance.set_size(star_size * 0.5)
 
 
 func _on_ready() -> void:
-	#_draw_background(50)
+	_draw_background(200)
 	
 	main_menu.visible = true
 	credits_menu.visible = false
