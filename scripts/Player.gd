@@ -1,6 +1,9 @@
-class_name player extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @onready var hit_sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+#@onready var zPlayer = $ZoeyPlayer
+#@onready var hud: CanvasLayer = $"VBoxContainer/Health Counter/health num text"
 
 var move_speed : float = 150.0
 var max_health: int = 100
@@ -14,25 +17,29 @@ signal died
 func _ready() -> void:
 	current_health = max_health
 	emit_signal("health_changed", current_health, max_health)
-	pass # Replace with function body.
+	#zPlayer.health_changed.connect(hud.set_health)
+	#hud.set_health(zPlayer.current_health, zPlayer.max_health)
+	#pass # Replace with function body.
 
 
-func take_damage(amount: int):
+func take_damage(amount: int) -> void:
 	#if damage is 0 or less, do nothing
 	
-	if hit_sfx != null:
-		hit_sfx.play()
+	
+		#hit_sfx.play()
 	
 	if amount <= 0:
 		return
 		
-	current_health -= amount
-	current_health = clamp(current_health, 0, max_health) #Clamp health between 0 and max_health
+	if hit_sfx: hit_sfx.play()
+		
+	#current_health -= amount
+	current_health = clamp(current_health - amount, 0, max_health) #Clamp health between 0 and max_health
 	emit_signal("health_changed" , current_health, max_health)
 	
 	#self explanatory
 	if current_health <= 0:
-		die()
+		died.emit()
 		
 func heal(amount: int):
 	if amount <= 0:
@@ -44,11 +51,12 @@ func heal(amount: int):
 
 func die():
 	print("Player has died!")
-	emit_signal("died")
+	#emit_signal("died")
+	died.emit()
 	#add game over logic here
 	
-func _on_Player_body_entered(_body):
-	hit_sfx.play()
+#func _on_Player_body_entered(_body):
+	#hit_sfx.play()
 	
 
 
