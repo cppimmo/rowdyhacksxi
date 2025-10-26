@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvqdbbk34qd3c"]
+[gd_scene load_steps=3 format=3 uid="uid://81u44iwx4mbp"]
 
-[ext_resource type="Script" uid="uid://cxe6kaxa0fsq2" path="res://scripts/health_and_cow_counter.gd" id="1_syumu"]
+[ext_resource type="Script" path="res://scripts/health_and_cow_counter.gd" id="1_syumu"]
+[ext_resource type="Theme" uid="uid://cgh2mjuggvfnv" path="res://ui/themes/my_theme.tres" id="2_jdxok"]
 
 [node name="Health and Cow Counter" type="Control"]
 layout_mode = 3
@@ -23,11 +24,13 @@ layout_mode = 2
 
 [node name="health counter text" type="Label" parent="CanvasLayer/VBoxContainer/Health Counter"]
 layout_mode = 2
+theme = ExtResource("2_jdxok")
 theme_override_font_sizes/font_size = 24
 text = "Health: "
 
 [node name="health num text" type="Label" parent="CanvasLayer/VBoxContainer/Health Counter"]
 layout_mode = 2
+theme = ExtResource("2_jdxok")
 theme_override_font_sizes/font_size = 24
 text = " health"
 
@@ -36,9 +39,11 @@ layout_mode = 2
 
 [node name="cow counter text" type="Label" parent="CanvasLayer/VBoxContainer/Cows Counter"]
 layout_mode = 2
+theme = ExtResource("2_jdxok")
 theme_override_font_sizes/font_size = 24
 text = "Cows Collected: "
 
 [node name="cow collector num text" type="Label" parent="CanvasLayer/VBoxContainer/Cows Counter"]
 layout_mode = 2
+theme = ExtResource("2_jdxok")
 theme_override_font_sizes/font_size = 24

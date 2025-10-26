@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bae3aynq4uwgp"]
+
+[ext_resource type="Script" uid="uid://b7qvvfltjigj" path="res://scenes/cow.gd" id="1_cairq"]
+
+[ext_resource type="Texture2D" uid="uid://dbbkwoi3th6ht" path="res://art/SpaceSpritesDownload/cow.png" id="1_fgglk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cairq"]
+size = Vector2(38, 20)
+
+[node name="cow" type="Area2D" groups=["destroyable"]]
+script = ExtResource("1_cairq")
+
+[node name="cow" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -6)
+shape = SubResource("RectangleShape2D_cairq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, -8)
+scale = Vector2(2, 2)
+texture = ExtResource("1_fgglk")

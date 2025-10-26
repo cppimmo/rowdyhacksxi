@@ -19,7 +19,10 @@ func _ready() -> void:
 
 func take_damage(amount: int):
 	#if damage is 0 or less, do nothing
-	hit_sfx.play()
+	
+	if hit_sfx != null:
+		hit_sfx.play()
+	
 	if amount <= 0:
 		return
 		
@@ -59,5 +62,12 @@ func _process(delta):
 	velocity = direction * move_speed
 	pass
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	move_and_slide()
+
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		if collider and collider.is_in_group("destroyable"):
+			collider.queue_free()

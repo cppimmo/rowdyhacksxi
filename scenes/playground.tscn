@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://co0juwwcd5ctd"]
+[gd_scene load_steps=23 format=4 uid="uid://b7mm0xyatuok3"]
 
 [ext_resource type="PackedScene" uid="uid://bl110pdmwqi7c" path="res://entities/enemy_spaceship_a.tscn" id="1_emj6c"]
 [ext_resource type="PackedScene" uid="uid://cy3g26rq7fjd4" path="res://Player/player.tscn" id="1_rupst"]
@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dwsrg5ilnkvro" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor.png" id="4_mrac1"]
 [ext_resource type="Texture2D" uid="uid://c8jh6dro7r1sg" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor 3.png" id="5_2q4k0"]
 [ext_resource type="Texture2D" uid="uid://d0nc73fe32wqx" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Bottom.png" id="6_x1amm"]
-[ext_resource type="PackedScene" uid="uid://bae3aynq4uwgp" path="res://scripts/cow.tscn" id="8_2q4k0"]
-[ext_resource type="PackedScene" uid="uid://da8m3glfuv0u5" path="res://scenes/boundary.tscn" id="8_mrac1"]
+[ext_resource type="PackedScene" uid="uid://bae3aynq4uwgp" path="res://scenes/cow.tscn" id="8_2q4k0"]
+[ext_resource type="PackedScene" path="res://scenes/boundary.tscn" id="8_mrac1"]
 [ext_resource type="PackedScene" path="res://scenes/health_and_cow_counter.tscn" id="11_2bfhc"]
-[ext_resource type="PackedScene" uid="uid://dnkq4an6dj4mr" path="res://entities/mob.tscn" id="12_osidk"]
+[ext_resource type="PackedScene" path="res://entities/mob.tscn" id="12_osidk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fn4oh"]
 texture = ExtResource("4_mrac1")

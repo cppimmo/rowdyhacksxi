@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl110pdmwqi7c"]
+[gd_scene load_steps=5 format=3 uid="uid://bl110pdmwqi7c"]
 
 [ext_resource type="Texture2D" uid="uid://edia7omix113" path="res://art/SpaceSpritesDownload/Space sprites.png" id="1_b2slm"]
 [ext_resource type="Script" uid="uid://xfitho5wje2a" path="res://scripts/entities/enemy_spaceship.gd" id="2_ob3pb"]
 [ext_resource type="PackedScene" uid="uid://c8ha6sc4kjm8j" path="res://entities/plasma_laser.tscn" id="3_oyhhd"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_oyhhd"]
 
 [node name="EnemySpaceshipA" type="Sprite2D"]
 scale = Vector2(1, 0.834)
@@ -13,5 +15,8 @@ script = ExtResource("2_ob3pb")
 laser_scene = ExtResource("3_oyhhd")
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamWAV_oyhhd")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
