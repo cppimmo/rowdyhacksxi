@@ -20,5 +20,6 @@ func _on_body_entered(body: Node) -> void:
 	if p.is_in_group("player"):
 		print("signal emitted: cow_picked_up")
 		HEALTH_AND_COW_COUNTER.increaseCows()
+		#cowCount+=1
 		emit_signal("cow_picked_up", cowCount)
 		queue_free()
