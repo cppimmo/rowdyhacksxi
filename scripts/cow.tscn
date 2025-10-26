@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bae3aynq4uwgp"]
+[gd_scene load_steps=5 format=3 uid="uid://bae3aynq4uwgp"]
 
 [ext_resource type="Texture2D" uid="uid://dbbkwoi3th6ht" path="res://art/SpaceSpritesDownload/cow.png" id="1_fgglk"]
+[ext_resource type="Script" uid="uid://b7qvvfltjigj" path="res://scenes/cow.gd" id="2_r527h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cairq"]
 size = Vector2(38, 20)
 
-[node name="cow" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuvrf"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="cow" type="CharacterBody2D" groups=["Player", "destroyable", "player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player", "destroyable", "player"]]
 position = Vector2(9, -6)
 shape = SubResource("RectangleShape2D_cairq")
 
@@ -17,3 +18,9 @@ shape = SubResource("RectangleShape2D_cairq")
 position = Vector2(16, -8)
 scale = Vector2(2, 2)
 texture = ExtResource("1_fgglk")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_r527h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_iuvrf")

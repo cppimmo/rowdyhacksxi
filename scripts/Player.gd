@@ -1,6 +1,15 @@
-class_name player extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @onready var hit_sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+@onready var game_over: AudioStreamPlayer2D = $AudioStreamPlayer2D2
+#@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
+#@onready var Player = $ZoeyPlayer
+#@onready var hud: CanvasLayer = $"VBoxContainer/Health Counter/health num text"
 
 var move_speed : float = 150.0
 var max_health: int = 100
@@ -14,25 +23,32 @@ signal died
 func _ready() -> void:
 	current_health = max_health
 	emit_signal("health_changed", current_health, max_health)
-	pass # Replace with function body.
+	
+	#Player.health_changed.connect(hud.set_health)
+	#hud.set_health(zPlayer.current_health, zPlayer.max_health)
+	#pass # Replace with function body.
 
 
-func take_damage(amount: int):
+func take_damage(amount: int) -> void:
 	#if damage is 0 or less, do nothing
 	
-	if hit_sfx != null:
-		hit_sfx.play()
+	
+		#hit_sfx.play()
 	
 	if amount <= 0:
 		return
 		
-	current_health -= amount
-	current_health = clamp(current_health, 0, max_health) #Clamp health between 0 and max_health
+	if hit_sfx: hit_sfx.play()
+		
+	#current_health -= amount
+	current_health = clamp(current_health - amount, 0, max_health) #Clamp health between 0 and max_health
 	emit_signal("health_changed" , current_health, max_health)
 	
-	#self explanatory
+	#WHEN PLAYER DIES
 	if current_health <= 0:
-		die()
+		print("Cowboy DOWN! (player died)")
+		game_over.play()
+		died.emit()
 		
 func heal(amount: int):
 	if amount <= 0:
@@ -42,9 +58,11 @@ func heal(amount: int):
 	current_health = clamp(current_health, 0, max_health) #Clamp health between 0 and max_health
 	emit_signal("health changed", current_health, max_health)
 
+#NOT WHEN PLAYER DIES DO NOT USE!!!!!!!!!!!!!!!
 func die():
 	print("Player has died!")
 	emit_signal("died")
+	died.emit()
 	#add game over logic here
 	
 func _on_Player_body_entered(_body):
@@ -54,20 +72,40 @@ func _on_Player_body_entered(_body):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#var direction = 
+	#if direction >0
+	#	animated_sprite_2d.flip_h(false)
+	#	animated_sprite_2d.play("run")
+	#if direction<0
+	#	animated_sprite_2d.flip_h(true)
+	#	animated_sprite_2d.play("run")
+		
+		
+	#ifdirection = 0
 	
 	var direction : Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	
 	velocity = direction * move_speed
+	
+	
 	pass
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
-
+	
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
 		if collider and collider.is_in_group("destroyable"):
 			collider.queue_free()
+	var direction = Input.get_axis("Left", "Right")    #-1, 0, 1
+	if direction != 0:
+		animated_sprite_2d.play("run")
+		animated_sprite_2d.flip_h = direction < 0
+	else:
+		animated_sprite_2d.play("idle")
+	
+	

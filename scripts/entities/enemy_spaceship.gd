@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Area2D
 
 var utils = preload("res://scripts/utils.gd")
 
@@ -10,6 +10,7 @@ var time_passed: float = 0.0
 
 @export var speed: float = 250.0
 @export var fire_interval: float = 3.0 # Seconds between blasts
+var next_fire_interval: float = fire_interval
 @export var laser_scene: PackedScene # Assign laser scene in the editor
 
 @onready var target = get_tree().get_first_node_in_group("player")
@@ -37,16 +38,18 @@ func _on_ready() -> void:
 
 func _process(delta: float) -> void:
 	time_passed += delta
-	position.x = initial_pos.x + sin(time_passed * hover_speed) * hover_amplitude * hover_dir.x
-	position.y = initial_pos.y + sin(time_passed * hover_speed) * hover_amplitude * hover_dir.y
+	self.position.x = initial_pos.x + sin(time_passed * hover_speed) * hover_amplitude * hover_dir.x
+	self.position.y = initial_pos.y + sin(time_passed * hover_speed) * hover_amplitude * hover_dir.y
 
 	if target:
 		time_since_last_shot += delta
 
 		# Fire a laser when the time elapses
-		if time_since_last_shot >= fire_interval:
+		if time_since_last_shot >= next_fire_interval:
 			_fire_laser()
 			time_since_last_shot = 0.0
+			
+			next_fire_interval = randf_range(fire_interval / 2, fire_interval * 2)
 
 func _fire_laser() -> void:
 	if not laser_scene:
