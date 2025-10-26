@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b7mm0xyatuok3"]
+[gd_scene load_steps=20 format=4 uid="uid://b7mm0xyatuok3"]
 
 [ext_resource type="PackedScene" uid="uid://vi25pmypgnau" path="res://scenes/player.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://b8c41dw3iovv" path="res://art/SpaceSpritesDownload/Laser Fences.png" id="2_emj6c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dwsrg5ilnkvro" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor.png" id="4_mrac1"]
 [ext_resource type="Texture2D" uid="uid://c8jh6dro7r1sg" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor 3.png" id="5_2q4k0"]
 [ext_resource type="Texture2D" uid="uid://d0nc73fe32wqx" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Bottom.png" id="6_x1amm"]
+[ext_resource type="PackedScene" uid="uid://bae3aynq4uwgp" path="res://scenes/cow.tscn" id="8_2q4k0"]
 [ext_resource type="PackedScene" uid="uid://da8m3glfuv0u5" path="res://scenes/boundary.tscn" id="8_mrac1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fn4oh"]
@@ -9018,6 +9019,9 @@ position = Vector2(371, 186)
 
 [node name="background layer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_k63md")
+
+[node name="cow" parent="." instance=ExtResource("8_2q4k0")]
+position = Vector2(863, 254)
 
 [node name="boundaries" type="Node" parent="."]
 
