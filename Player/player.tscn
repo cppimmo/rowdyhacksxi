@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://vi25pmypgnau"]
+[gd_scene load_steps=11 format=3 uid="uid://cy3g26rq7fjd4"]
 
 [ext_resource type="Script" uid="uid://csmnh25xpg3ap" path="res://Player/Player Scripts/Player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://12xaneugnuan" path="res://Player/Sprites/Cowboy_pixlart.png" id="2_4ntmi"]
