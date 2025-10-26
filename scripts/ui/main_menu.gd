@@ -9,6 +9,8 @@ extends Node
 const _FIRST_GAME_LEVEL: String = "res://game_level.tscn"
 const _CREDITS_TEXT_PATH: String = "res://ui/credits_menu_content.txt"
 
+var utils = preload("res://scripts/utils.gd")
+
 # Scences for the different types of stars/planets (they are TextureRect's)
 var star_data = {
 	"circle": "res://ui/circle_star.tscn",
@@ -28,11 +30,7 @@ func _load_from_file(file_path: String) -> String:
 	file.close() # Close the file
 	
 	return contents
-	
-	
-func _rand_num_between(min: int, max: int) -> int:
-	return randi() % (max + 1 - min) + min
-	
+
 
 # Use to draw stars randomly above the background pane
 func _draw_background(num_stars: int) -> void:
@@ -45,8 +43,8 @@ func _draw_background(num_stars: int) -> void:
 		var bg_size = background.size
 		var star_size = star_instance.size
 		
-		var pos_x = _rand_num_between(star_size.x / 2, bg_size.x - star_size.x / 2)
-		var pos_y = _rand_num_between(star_size.y / 2, bg_size.y - star_size.y / 2)
+		var pos_x = utils.randi_num_between(star_size.x / 2, bg_size.x - star_size.x / 2)
+		var pos_y = utils.randi_num_between(star_size.y / 2, bg_size.y - star_size.y / 2)
 		var pos = Vector2i(pos_x, pos_y)
 		print("Background: ", bg_size, " Star: ", star_size, " -> Position: ", pos)
 		
