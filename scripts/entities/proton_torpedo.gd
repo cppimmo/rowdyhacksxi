@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var speed: float = 200.0
-@export var homing_strength: float = 5.0
-@export var burn_time: float = 3.0 
-@export var lifespan: float = 12.0
+@export var homing_strength: float = 2.0
+@export var burn_time: float = 3.5 
+@export var lifespan: float = 8.5
 var time_elapsed: float = 0.0
 var target: Node
 
