@@ -1,5 +1,6 @@
 extends Area2D
-const HEALTH_AND_COW_COUNTER = preload("res://scenes/health_and_cow_counter.tscn")
+@onready var HEALTH_AND_COW_COUNTER = preload("res://scenes/health_and_cow_counter.tscn")
+#@onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 signal cow_picked_up(count: int)
 var cowCount := 0
@@ -22,7 +23,7 @@ func _on_body_entered(body: Node) -> void:
 	if p.is_in_group("player"):
 
 		print("signal emitted: cow_picked_up")
-		HEALTH_AND_COW_COUNTER.increaseCows()
+#		HEALTH_AND_COW_COUNTER.increaseCows()
 		#cowCount+=1
 
 		emit_signal("cow_picked_up", cowCount)
