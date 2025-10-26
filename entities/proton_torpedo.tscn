@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c88sr1ks34hww"]
+
+[ext_resource type="Texture2D" uid="uid://cyb87fnamu1la" path="res://assets/textures/proton_torpedo_02.png" id="1_eh0pr"]
+[ext_resource type="Texture2D" uid="uid://c2vy1ohed3wma" path="res://assets/textures/proton_torpedo_01.png" id="1_vq4du"]
+[ext_resource type="Script" uid="uid://dwocbhbjqd7nm" path="res://scripts/entities/proton_torpedo.gd" id="1_wr4f3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eh0pr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eh0pr")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vq4du")
+}],
+"loop": true,
+"name": &"fuel_spent",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr4f3"]
+size = Vector2(116, 22)
+
+[node name="ProtonTorpedo" type="Node2D"]
+script = ExtResource("1_wr4f3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eh0pr")
+animation = &"burn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vq4du")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10, -3)
+shape = SubResource("RectangleShape2D_wr4f3")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
