@@ -1,14 +1,15 @@
-[gd_scene load_steps=20 format=4 uid="uid://b7mm0xyatuok3"]
+[gd_scene load_steps=21 format=4 uid="uid://bpdw71nqrvkpr"]
 
-[ext_resource type="PackedScene" uid="uid://vi25pmypgnau" path="res://scenes/player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://bl110pdmwqi7c" path="res://entities/enemy_spaceship_a.tscn" id="1_emj6c"]
+[ext_resource type="PackedScene" uid="uid://vi25pmypgnau" path="res://Player/player.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://b8c41dw3iovv" path="res://art/SpaceSpritesDownload/Laser Fences.png" id="2_emj6c"]
 [ext_resource type="Texture2D" uid="uid://edia7omix113" path="res://art/SpaceSpritesDownload/Space sprites.png" id="2_o6wi6"]
 [ext_resource type="Texture2D" uid="uid://bvphdqkul33ww" path="res://art/SpaceSpritesDownload/Space.png" id="3_emj6c"]
 [ext_resource type="Texture2D" uid="uid://dwsrg5ilnkvro" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor.png" id="4_mrac1"]
 [ext_resource type="Texture2D" uid="uid://c8jh6dro7r1sg" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor 3.png" id="5_2q4k0"]
 [ext_resource type="Texture2D" uid="uid://d0nc73fe32wqx" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Bottom.png" id="6_x1amm"]
-[ext_resource type="PackedScene" uid="uid://bae3aynq4uwgp" path="res://scenes/cow.tscn" id="8_2q4k0"]
-[ext_resource type="PackedScene" uid="uid://da8m3glfuv0u5" path="res://scenes/boundary.tscn" id="8_mrac1"]
+[ext_resource type="PackedScene" path="res://scenes/cow.tscn" id="8_2q4k0"]
+[ext_resource type="PackedScene" path="res://scenes/boundary.tscn" id="8_mrac1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fn4oh"]
 texture = ExtResource("4_mrac1")
@@ -9039,3 +9040,15 @@ rotation = 3.1415927
 [node name="right boundary" parent="boundaries" instance=ExtResource("8_mrac1")]
 position = Vector2(1368, -161)
 rotation = 1.5707964
+
+[node name="EnemySpaceshipA" parent="." instance=ExtResource("1_emj6c")]
+position = Vector2(454, 191)
+rotation = 1.9715732
+
+[node name="EnemySpaceshipA2" parent="." instance=ExtResource("1_emj6c")]
+position = Vector2(466, 477)
+rotation = 0.4644785
+
+[node name="EnemySpaceshipA3" parent="." instance=ExtResource("1_emj6c")]
+position = Vector2(717, 222)
+rotation = -0.5349424

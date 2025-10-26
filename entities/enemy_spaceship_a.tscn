@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ha6sc4kjm8j" path="res://entities/plasma_laser.tscn" id="3_oyhhd"]
 
 [node name="EnemySpaceshipA" type="Sprite2D"]
-scale = Vector2(380, 317)
+scale = Vector2(1, 0.834)
 texture = ExtResource("1_b2slm")
 region_enabled = true
 region_rect = Rect2(229, 257, 56, 120)
