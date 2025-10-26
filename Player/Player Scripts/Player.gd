@@ -59,5 +59,12 @@ func _process(delta):
 	velocity = direction * move_speed
 	pass
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	move_and_slide()
+
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		if collider and collider.is_in_group("destroyable"):
+			collider.queue_free()
