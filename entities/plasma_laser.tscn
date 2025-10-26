@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ha6sc4kjm8j"]
+
+[ext_resource type="Texture2D" uid="uid://cr7ktys0eeevs" path="res://assets/textures/plasma_laser.png" id="1_bduyb"]
+[ext_resource type="Script" uid="uid://bcr057xdn2we3" path="res://scripts/entities/plasma_laser.gd" id="1_lx3qn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bduyb"]
+size = Vector2(20, 124)
+
+[node name="PlasmaLaser" type="Area2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_lx3qn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bduyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bduyb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
