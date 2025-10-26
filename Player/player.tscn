@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy3g26rq7fjd4"]
+[gd_scene load_steps=12 format=3 uid="uid://cy3g26rq7fjd4"]
 
 [ext_resource type="Script" uid="uid://csmnh25xpg3ap" path="res://Player/Player Scripts/Player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://12xaneugnuan" path="res://Player/Sprites/Cowboy_pixlart.png" id="2_4ntmi"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://r6daybl2uldk" path="res://Player/Sprites/Cowboy_Jump_Right1.png" id="6_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://ds2hdxa1d7mau" path="res://Player/Sprites/Cowboy_Walking3.png" id="7_apopc"]
 [ext_resource type="Texture2D" uid="uid://dtaemu3flqi37" path="res://Player/Sprites/Cowboy_Walking4.png" id="8_od3ui"]
+[ext_resource type="AudioStream" uid="uid://b66law3vgwcep" path="res://hit_sfx.mp3" id="9_00tjw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00tjw"]
+size = Vector2(14, 22)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5htga"]
 animations = [{
@@ -53,17 +55,24 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 5
 script = ExtResource("1_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(207, 138)
-shape = SubResource("CircleShape2D_edjgo")
+position = Vector2(206.5, 138.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_00tjw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(207, 138)
 sprite_frames = SubResource("SpriteFrames_5htga")
-animation = &"Walk "
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.61136395
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_00tjw")
+volume_db = 24.0
+pitch_scale = 0.52
+attenuation = 0.46651644
