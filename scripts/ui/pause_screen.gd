@@ -7,7 +7,7 @@ func _on_ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	if Input.action_press("Pause"):
+	if Input.is_action_just_pressed("Pause"):
 		ui_root.visible = not ui_root.visible
 		
 	
