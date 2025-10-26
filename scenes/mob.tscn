@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnkq4an6dj4mr"]
+[gd_scene load_steps=9 format=3 uid="uid://3iv5vu3onq8t"]
 
 [ext_resource type="Script" uid="uid://cy36he3vjiefn" path="res://scripts/mob.gd" id="1_p11y5"]
 [ext_resource type="Texture2D" uid="uid://bkirkrrrdg8yc" path="res://art/Sprites/Cowboy_LeftIdle.png" id="2_s5nov"]
