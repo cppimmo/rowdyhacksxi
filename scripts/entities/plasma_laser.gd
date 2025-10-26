@@ -2,6 +2,7 @@ extends Area2D
 
 @export var speed: float = 400.0
 @export var lifetime: float = 3.0 # Seconds before deletion
+
 var velocity: Vector2 = Vector2.ZERO
 var time_alive: float = 0.0
 
@@ -15,6 +16,8 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	var p: = body
 	if body.is_in_group("player"):
+		p.take_damage(25)
 		print("Ha! I hit the player.")
 		queue_free() # Remove this obj

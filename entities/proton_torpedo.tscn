@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c88sr1ks34hww"]
+[gd_scene load_steps=7 format=3 uid="uid://c88sr1ks34hww"]
 
 [ext_resource type="Texture2D" uid="uid://cyb87fnamu1la" path="res://assets/textures/proton_torpedo_02.png" id="1_eh0pr"]
 [ext_resource type="Texture2D" uid="uid://c2vy1ohed3wma" path="res://assets/textures/proton_torpedo_01.png" id="1_vq4du"]
 [ext_resource type="Script" uid="uid://dwocbhbjqd7nm" path="res://scripts/entities/proton_torpedo.gd" id="1_wr4f3"]
+[ext_resource type="AudioStream" uid="uid://c5k5lyocd18kp" path="res://assets/sounds/launches/rlaunch.wav" id="4_tqafa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eh0pr"]
 animations = [{
@@ -27,6 +28,7 @@ animations = [{
 size = Vector2(116, 22)
 
 [node name="ProtonTorpedo" type="Node2D"]
+scale = Vector2(0.65, 0.65)
 script = ExtResource("1_wr4f3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -42,4 +44,8 @@ texture = ExtResource("1_vq4du")
 position = Vector2(-10, -3)
 shape = SubResource("RectangleShape2D_wr4f3")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tqafa")
+
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
