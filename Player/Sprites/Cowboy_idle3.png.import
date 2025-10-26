@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbx4brbahua"
-path="res://.godot/imported/Cowboy_Walk_Right1.png-1b2e9f205d3e67cdbab8813a88dc33ed.ctex"
+uid="uid://bg462fc7casv8"
+path="res://.godot/imported/Cowboy_idle3.png-c1f6ce932ae910beaed16d5f7528cc80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Cowboy_Walk_Right1.png"
-dest_files=["res://.godot/imported/Cowboy_Walk_Right1.png-1b2e9f205d3e67cdbab8813a88dc33ed.ctex"]
+source_file="res://Player/Sprites/Cowboy_idle3.png"
+dest_files=["res://.godot/imported/Cowboy_idle3.png-c1f6ce932ae910beaed16d5f7528cc80.ctex"]
 
 [params]
 
