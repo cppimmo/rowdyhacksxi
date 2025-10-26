@@ -1,7 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://c5noe3rc8n35v"]
+[gd_scene load_steps=25 format=4 uid="uid://c5noe3rc8n35v"]
 
 [ext_resource type="Texture2D" uid="uid://dwsrg5ilnkvro" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor.png" id="1_boxps"]
-[ext_resource type="Script" uid="uid://mca1vflbeofl" path="res://scenes/new_playground.gd" id="1_ia2p3"]
+[ext_resource type="Script" uid="uid://bfuoy1q4gvxyv" path="res://scenes/new_playground.gd" id="1_ia2p3"]
 [ext_resource type="Texture2D" uid="uid://b8c41dw3iovv" path="res://art/SpaceSpritesDownload/Laser Fences.png" id="2_2hvno"]
 [ext_resource type="Texture2D" uid="uid://c8jh6dro7r1sg" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor 3.png" id="3_ia2p3"]
 [ext_resource type="Texture2D" uid="uid://d0nc73fe32wqx" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Bottom.png" id="4_y7205"]
@@ -12,11 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://xboe6kendxrr" path="res://game_over.mp3" id="9_ia2p3"]
 [ext_resource type="PackedScene" uid="uid://da8m3glfuv0u5" path="res://scenes/boundary.tscn" id="9_x8as8"]
 [ext_resource type="PackedScene" uid="uid://bl110pdmwqi7c" path="res://entities/enemy_spaceship_a.tscn" id="10_jghjn"]
-
 [ext_resource type="PackedScene" uid="uid://81u44iwx4mbp" path="res://scenes/health_and_cow_counter.tscn" id="11_3xept"]
-[ext_resource type="Script" uid="uid://b7qvvfltjigj" path="res://scenes/cow.gd" id="11_y7205"]
 [ext_resource type="PackedScene" path="res://scenes/mob.tscn" id="12_4nb5s"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bfhc"]
 texture = ExtResource("6_80c0g")
@@ -9016,8 +9013,6 @@ sources/2 = SubResource("TileSetAtlasSource_j30dx")
 sources/7 = SubResource("TileSetAtlasSource_2ilni")
 sources/1 = SubResource("TileSetAtlasSource_mrac1")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7205"]
-
 [node name="Playground2" type="Node2D"]
 script = ExtResource("1_ia2p3")
 
@@ -9040,14 +9035,6 @@ volume_db = 24.0
 
 [node name="cow" parent="cows" instance=ExtResource("8_3gkvd")]
 position = Vector2(863, 254)
-
-
-[node name="Area2D" type="Area2D" parent="cow"]
-collision_layer = 4
-script = ExtResource("11_y7205")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="cow/Area2D"]
-shape = SubResource("RectangleShape2D_y7205")
 
 [node name="cow2" parent="cows" instance=ExtResource("8_3gkvd")]
 position = Vector2(1189, 73)
@@ -9075,7 +9062,6 @@ position = Vector2(585, 342)
 
 [node name="cow10" parent="cows" instance=ExtResource("8_3gkvd")]
 position = Vector2(129, 220)
-
 
 [node name="boundaries" type="Node" parent="."]
 
@@ -9118,4 +9104,3 @@ rotation = -0.5349424
 position = Vector2(271, 198)
 
 [editable path="Player"]
-[editable path="cow"]
