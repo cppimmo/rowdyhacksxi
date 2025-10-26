@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://xw0vwphx3d5u"]
+[gd_scene load_steps=13 format=3 uid="uid://xw0vwphx3d5u"]
 
 [ext_resource type="Script" uid="uid://csmnh25xpg3ap" path="res://scripts/Player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://12xaneugnuan" path="res://art/Sprites/Cowboy_pixlart.png" id="2_4ntmi"]
 [ext_resource type="AudioStream" uid="uid://dpjsyessps473" path="res://hit_sfx.mp3" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://ymji0op3ts3v" path="res://assets/textures/lasso_hoop.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bg462fc7casv8" path="res://art/Sprites/Cowboy_idle3.png" id="5_tuyoq"]
@@ -12,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dtaemu3flqi37" path="res://art/Sprites/Cowboy_Walking4.png" id="9_d2wvv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qlg0r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_smehm"]
 animations = [{
@@ -52,6 +49,8 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qlg0r"]
+
 [node name="ZoeyPlayer" type="CharacterBody2D"]
 script = ExtResource("1_4ntmi")
 
@@ -62,9 +61,11 @@ position_smoothing_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_edjgo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("2_4ntmi")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(41, 10)
+sprite_frames = SubResource("SpriteFrames_smehm")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qhqgy")
@@ -86,9 +87,3 @@ shape = SubResource("CircleShape2D_qlg0r")
 texture = ExtResource("4_dqkch")
 
 [node name="Line2D" type="Line2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(41, 10)
-sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"run"
-frame_progress = 0.045238614
