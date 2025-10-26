@@ -1,7 +1,12 @@
 class_name Player extends CharacterBody2D
 
 @onready var hit_sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 @onready var game_over: AudioStreamPlayer2D = $AudioStreamPlayer2D2
+#@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 
 #@onready var Player = $ZoeyPlayer
 #@onready var hud: CanvasLayer = $"VBoxContainer/Health Counter/health num text"
@@ -67,20 +72,40 @@ func _on_Player_body_entered(_body):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#var direction = 
+	#if direction >0
+	#	animated_sprite_2d.flip_h(false)
+	#	animated_sprite_2d.play("run")
+	#if direction<0
+	#	animated_sprite_2d.flip_h(true)
+	#	animated_sprite_2d.play("run")
+		
+		
+	#ifdirection = 0
 	
 	var direction : Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	
 	velocity = direction * move_speed
+	
+	
 	pass
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
-
+	
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
 		if collider and collider.is_in_group("destroyable"):
 			collider.queue_free()
+	var direction = Input.get_axis("Left", "Right")    #-1, 0, 1
+	if direction != 0:
+		animated_sprite_2d.play("run")
+		animated_sprite_2d.flip_h = direction < 0
+	else:
+		animated_sprite_2d.play("idle")
+	
+	
