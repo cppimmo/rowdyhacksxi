@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://bpdw71nqrvkpr"]
+[gd_scene load_steps=22 format=4 uid="uid://co0juwwcd5ctd"]
 
 [ext_resource type="PackedScene" uid="uid://bl110pdmwqi7c" path="res://entities/enemy_spaceship_a.tscn" id="1_emj6c"]
-[ext_resource type="PackedScene" uid="uid://vi25pmypgnau" path="res://Player/player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://cy3g26rq7fjd4" path="res://Player/player.tscn" id="1_rupst"]
 [ext_resource type="Texture2D" uid="uid://b8c41dw3iovv" path="res://art/SpaceSpritesDownload/Laser Fences.png" id="2_emj6c"]
 [ext_resource type="Texture2D" uid="uid://edia7omix113" path="res://art/SpaceSpritesDownload/Space sprites.png" id="2_o6wi6"]
 [ext_resource type="Texture2D" uid="uid://bvphdqkul33ww" path="res://art/SpaceSpritesDownload/Space.png" id="3_emj6c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d0nc73fe32wqx" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Bottom.png" id="6_x1amm"]
 [ext_resource type="PackedScene" path="res://scenes/cow.tscn" id="8_2q4k0"]
 [ext_resource type="PackedScene" path="res://scenes/boundary.tscn" id="8_mrac1"]
+[ext_resource type="PackedScene" uid="uid://dnkq4an6dj4mr" path="res://entities/mob.tscn" id="11_2bfhc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fn4oh"]
 texture = ExtResource("4_mrac1")
@@ -9052,3 +9053,6 @@ rotation = 0.4644785
 [node name="EnemySpaceshipA3" parent="." instance=ExtResource("1_emj6c")]
 position = Vector2(717, 222)
 rotation = -0.5349424
+
+[node name="Mob" parent="." instance=ExtResource("11_2bfhc")]
+position = Vector2(255, 198)

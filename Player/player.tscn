@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://r6daybl2uldk" path="res://Player/Sprites/Cowboy_Jump_Right1.png" id="6_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://ds2hdxa1d7mau" path="res://Player/Sprites/Cowboy_Walking3.png" id="7_apopc"]
 [ext_resource type="Texture2D" uid="uid://dtaemu3flqi37" path="res://Player/Sprites/Cowboy_Walking4.png" id="8_od3ui"]
-[ext_resource type="AudioStream" uid="uid://b66law3vgwcep" path="res://hit_sfx.mp3" id="9_00tjw"]
+[ext_resource type="AudioStream" uid="uid://b66law3vgwcep" path="res://assets/sounds/hit_sfx.mp3" id="9_00tjw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00tjw"]
 size = Vector2(14, 22)
@@ -56,9 +56,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-
 collision_mask = 5
-
 script = ExtResource("1_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
