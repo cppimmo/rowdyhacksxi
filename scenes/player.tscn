@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://tt2qjls8jv8b"]
 
-[ext_resource type="Script" path="res://Player/Player Scripts/Player.gd" id="1_4ntmi"]
+[ext_resource type="Script" uid="uid://csmnh25xpg3ap" path="res://scripts/Player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://12xaneugnuan" path="res://art/Sprites/Cowboy_pixlart.png" id="2_4ntmi"]
 [ext_resource type="AudioStream" uid="uid://dpjsyessps473" path="res://hit_sfx.mp3" id="3_qhqgy"]
 
