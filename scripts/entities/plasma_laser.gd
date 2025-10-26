@@ -16,8 +16,12 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	var p: = body
-	if body.is_in_group("player"):
-		p.take_damage(25)
+
+	var target := body
+	if not target.is_in_group("player") and body.get_parent() and body.get_parent().is_in_group("player"):
+		target = body.get_parent()
+
+	if target.is_in_group("player") and target.has_method("take_damage"):
+		target.take_damage(25)
 		print("Ha! I hit the player.")
-		queue_free() # Remove this obj
+		queue_free()
