@@ -15,11 +15,25 @@ var time_passed: float = 0.0
 @onready var target = get_tree().get_first_node_in_group("player")
 var time_since_last_shot: float = 0.0
 
+const _LASER_SFX_PATH: String = "res://assets/sounds/lasers"
+const _LASER_SFX_COUNT: int = 13
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var sfx_resources: Array[AudioStream] = []
+
 
 func _on_ready() -> void:
 	initial_pos = self.position # Remember initial position
 	hover_dir = Vector2i(utils.get_random_direction(), utils.get_random_direction())
-
+	
+	# Load all laser sound effects
+	for i in range(1, _LASER_SFX_COUNT + 1):
+		var path = "%s/laser%02d.wav" % [_LASER_SFX_PATH, i]
+		if ResourceLoader.exists(path):
+			var sfx = load(path)
+			sfx_resources.append(sfx)
+		else:
+			push_warning("Missing SFX file: " + path)
+	
 
 func _process(delta: float) -> void:
 	time_passed += delta
@@ -51,3 +65,8 @@ func _fire_laser() -> void:
 	
 	#if laser.has_variable("velocity"):
 	laser.velocity = dir * laser.speed
+	
+	if sfx_resources.size() > 0:
+		var random_sfx = sfx_resources[randi() % sfx_resources.size()]
+		audio_stream_player_2d.stream = random_sfx
+		audio_stream_player_2d.play()

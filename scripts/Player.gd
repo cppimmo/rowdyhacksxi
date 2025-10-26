@@ -19,7 +19,10 @@ func _ready() -> void:
 
 func take_damage(amount: int):
 	#if damage is 0 or less, do nothing
-	hit_sfx.play()
+	
+	if hit_sfx != null:
+		hit_sfx.play()
+	
 	if amount <= 0:
 		return
 		
