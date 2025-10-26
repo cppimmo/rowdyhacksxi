@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://12xaneugnuan"
-path="res://.godot/imported/Cowboy_pixlart.png-d6759cadb83cb5dda58fa5af2fc69c6d.ctex"
+uid="uid://chh4y2rfhcl8k"
+path="res://.godot/imported/ExamplePlayerSprite.png-75c4da1c96cffebda270066aff45c4ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Cowboy_pixlart.png"
-dest_files=["res://.godot/imported/Cowboy_pixlart.png-d6759cadb83cb5dda58fa5af2fc69c6d.ctex"]
+source_file="res://art/Sprites/ExamplePlayerSprite.png"
+dest_files=["res://.godot/imported/ExamplePlayerSprite.png-75c4da1c96cffebda270066aff45c4ec.ctex"]
 
 [params]
 

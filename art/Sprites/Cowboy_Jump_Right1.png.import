@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctdmrx7l2r3d5"
-path="res://.godot/imported/Cowboy_Jump_Left1.png-de7e06b188f8e6ec0f9f6b84e7cbe55a.ctex"
+uid="uid://r6daybl2uldk"
+path="res://.godot/imported/Cowboy_Jump_Right1.png-565eb9906d780def05b3bfa1ec1ed78e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Cowboy_Jump_Left1.png"
-dest_files=["res://.godot/imported/Cowboy_Jump_Left1.png-de7e06b188f8e6ec0f9f6b84e7cbe55a.ctex"]
+source_file="res://art/Sprites/Cowboy_Jump_Right1.png"
+dest_files=["res://.godot/imported/Cowboy_Jump_Right1.png-565eb9906d780def05b3bfa1ec1ed78e.ctex"]
 
 [params]
 

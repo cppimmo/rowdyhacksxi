@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db3tua3ae6m2l"
-path="res://.godot/imported/Cowboy_Idle2.png-2f39b8e3373b83a13b17931c5cd1779b.ctex"
+uid="uid://cfvnmuijg7oaw"
+path="res://.godot/imported/Cowboy_Jump_Left2.png-1be357e2ae4ba83364d935894c8802a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Cowboy_Idle2.png"
-dest_files=["res://.godot/imported/Cowboy_Idle2.png-2f39b8e3373b83a13b17931c5cd1779b.ctex"]
+source_file="res://art/Sprites/Cowboy_Jump_Left2.png"
+dest_files=["res://.godot/imported/Cowboy_Jump_Left2.png-1be357e2ae4ba83364d935894c8802a1.ctex"]
 
 [params]
 
