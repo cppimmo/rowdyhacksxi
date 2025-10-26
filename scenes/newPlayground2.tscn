@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://jq125odv0nn4"]
+[gd_scene load_steps=23 format=4 uid="uid://jq125odv0nn4"]
 
 [ext_resource type="Texture2D" uid="uid://edia7omix113" path="res://art/SpaceSpritesDownload/Space sprites.png" id="1_m5doy"]
 [ext_resource type="Texture2D" uid="uid://bvphdqkul33ww" path="res://art/SpaceSpritesDownload/Space.png" id="2_qsbxo"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c8jh6dro7r1sg" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Floor 3.png" id="5_cja30"]
 [ext_resource type="Texture2D" uid="uid://d0nc73fe32wqx" path="res://art/SpaceSpritesDownload/Asteroid floor sprites/Asteroid Bottom.png" id="6_x1fix"]
 [ext_resource type="PackedScene" uid="uid://xw0vwphx3d5u" path="res://scenes/player.tscn" id="7_g6g2h"]
-[ext_resource type="Script" uid="uid://csmnh25xpg3ap" path="res://scripts/Player.gd" id="8_kaej3"]
 [ext_resource type="PackedScene" uid="uid://bae3aynq4uwgp" path="res://scripts/cow.tscn" id="9_iy6k5"]
 [ext_resource type="PackedScene" uid="uid://da8m3glfuv0u5" path="res://scenes/boundary.tscn" id="10_y6vt0"]
 [ext_resource type="PackedScene" uid="uid://cvqdbbk34qd3c" path="res://scenes/health_and_cow_counter.tscn" id="11_dfyf6"]
@@ -9026,7 +9025,7 @@ tile_set = SubResource("TileSet_d3jfy")
 tile_set = SubResource("TileSet_k63md")
 
 [node name="Player" parent="." groups=["Player", "player"] instance=ExtResource("7_g6g2h")]
-script = ExtResource("8_kaej3")
+position = Vector2(595, 309)
 
 [node name="cow" parent="." instance=ExtResource("9_iy6k5")]
 position = Vector2(863, 254)
@@ -9038,14 +9037,14 @@ position = Vector2(-56.000004, 832)
 rotation = 4.712389
 
 [node name="upper boundary" parent="boundaries" instance=ExtResource("10_y6vt0")]
-position = Vector2(-17, 13.999992)
+position = Vector2(-88, -120.00001)
 
 [node name="lower boundary" parent="boundaries" instance=ExtResource("10_y6vt0")]
 position = Vector2(1393, 808.00006)
 rotation = 3.1415927
 
 [node name="right boundary" parent="boundaries" instance=ExtResource("10_y6vt0")]
-position = Vector2(1421, -32)
+position = Vector2(1335, -159)
 rotation = 1.5707964
 
 [node name="Health and Cow Counter" parent="." instance=ExtResource("11_dfyf6")]
