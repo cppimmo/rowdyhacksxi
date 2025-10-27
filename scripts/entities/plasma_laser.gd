@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+
 	var target := body
 	if not target.is_in_group("player") and body.get_parent() and body.get_parent().is_in_group("player"):
 		target = body.get_parent()

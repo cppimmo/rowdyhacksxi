@@ -5,17 +5,27 @@
 [ext_resource type="AudioStream" uid="uid://dpjsyessps473" path="res://hit_sfx.mp3" id="3_qhqgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
+radius = 7.0
 
 [node name="ZoeyPlayer" type="CharacterBody2D"]
 script = ExtResource("1_qhqgy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+<<<<<<< HEAD
 position = Vector2(207, 135)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(207, 138)
+=======
+position = Vector2(41, 12)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(41, 11)
+>>>>>>> 56b89ad22b30450882c701932c4dc65e5f360634
 shape = SubResource("CircleShape2D_edjgo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

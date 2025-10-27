@@ -1,9 +1,8 @@
 class_name Player extends CharacterBody2D
 
+@onready var timer: Timer = $Timer
 @onready var hit_sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
-
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
 @onready var game_over: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 #@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -49,6 +48,13 @@ func take_damage(amount: int) -> void:
 		print("Cowboy DOWN! (player died)")
 		game_over.play()
 		died.emit()
+		await get_tree().create_timer(2.2).timeout
+		print("reload scene")
+		get_tree().reload_current_scene()
+		
+
+
+		
 		
 func heal(amount: int):
 	if amount <= 0:
